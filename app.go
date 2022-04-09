@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
 
 func main() {
@@ -38,7 +39,7 @@ func exibeIntroducao() {
 }
 
 func exibeMenu() {
-	fmt.Println("1- Iniciar Monitoramento")
+	fmt.Println("1. Iniciar Monitoramento")
 	fmt.Println("2. Exibir Logs")
 	fmt.Println("0. Sair do Programa")
 }
@@ -55,9 +56,15 @@ func iniciarMonitoramento() {
 	fmt.Println("Iniciando Monitoramento...")
 	sites := []string{"https://www.google.com.br", "https://www.youtube.com", "https://www.amazon.com"}
 	
-	for i, site := range sites {
-		fmt.Println("Testando site", i, ":", site)
-		testaSite(site)
+	for i := 0; i < 5 ; i++{
+		fmt.Println("-----------------------------------------------------------")
+		for i, site := range sites {
+			fmt.Println("Testando site", i, ":", site)
+			testaSite(site)
+			fmt.Println("-----------------------------------------------------------")
+		}
+		fmt.Println("===========================================================")
+		time.Sleep(5 * time.Second)
 	}
 
 	fmt.Println("Monitoramento finalizado.")
