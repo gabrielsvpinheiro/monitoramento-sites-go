@@ -7,27 +7,31 @@ import (
 )
 
 func main() {
-
 	exibeIntroducao()
-	exibeMenu()
-	comando := leComando()
+	for {
+		exibeMenu()
 
-	switch comando {
-	case 1:
-		iniciarMonitoramento()
-	case 2:
-		fmt.Println("Exibindo Logs...")
-	case 0:
-		fmt.Println("Saindo do Programa...")
-		os.Exit(0)
-	default:
-		fmt.Println("Comando Inválido")
-		os.Exit(-1)
+		comando := leComando()
+
+		switch comando {
+		case 1:
+			iniciarMonitoramento()
+		case 2:
+			fmt.Println("Exibindo Logs...")
+		case 0:
+			fmt.Println("Saindo do Programa...")
+			os.Exit(0)
+		default:
+			fmt.Println("Comando Inválido")
+			os.Exit(-1)
+		}
 	}
 }
 
 func exibeIntroducao() {
-	nome := "Zé das Couve"
+	fmt.Println("Olá, seja bem vindo ao programa de monitoramento! Digite seu nome: ")
+	var nome string
+	fmt.Scan(&nome)
 	versao := 1.1
 	fmt.Println("Olá Sr.", nome)
 	fmt.Println("Este programa está na versão", versao)
