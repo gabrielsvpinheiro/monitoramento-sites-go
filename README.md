@@ -1,7 +1,7 @@
-<h1 align="center"> Monitorador de Sites </h1>
+<h1 align="center"> Monitorador de Sites (Golang)</h1>
 
-<h2>O Programa tem as seguintes funções:</h2>
+<h4>O Programa tem as seguintes funções:</h4>
 
-* 1. Realizar o monitoramento do site
-* 2. Exibir o log da busca
-* 3. Sair do programa
+* Realizar o monitoramento do site, apresentando se o site está online ou offline
+* Exibir o log da busca
+* Sair do programa
