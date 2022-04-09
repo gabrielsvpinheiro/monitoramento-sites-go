@@ -53,7 +53,18 @@ func leComando() int {
 
 func iniciarMonitoramento() {
 	fmt.Println("Iniciando Monitoramento...")
-	site := "https://www.google.com.br"
+	sites := []string{"https://www.google.com.br", "https://www.youtube.com", "https://www.amazon.com"}
+	
+	for i, site := range sites {
+		fmt.Println("Testando site", i, ":", site)
+		testaSite(site)
+	}
+
+	fmt.Println("Monitoramento finalizado.")
+	fmt.Println("")	
+}
+
+func testaSite(site string) {
 	resp, _ := http.Get(site)
 
 	if resp.StatusCode == 200 {
